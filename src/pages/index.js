@@ -1,19 +1,43 @@
-// Step 1: Import React
 import * as React from "react";
-import Layout from "../components/layout";
-import { StaticImage } from "gatsby-plugin-image";
+import styled from "styled-components";
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import { GlobalStyle } from "../components/layout";
+import Moon from "../components/moon";
+import Text from "../components/text";
 
-// Step 2: Define your component
+const CanvasWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  position: relative;
+
+  .text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    width: 100%;
+    top: 10%;
+  }
+`;
+
 const IndexPage = () => {
   return (
-    <Layout pageTitle="Home Page">
-      <p>I'm making this by following the Gatsby Tutorial.</p>
-      <StaticImage
-        alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
-        src="../images/clifford.jpg"
-      />
-    </Layout>
-  )
-};
-// Step 3: Export your component
+    <>
+      <GlobalStyle />
+      <CanvasWrapper>
+        <Canvas>
+          <Suspense fallback={null}>
+            <Text />
+            <Moon />
+          </Suspense>
+        </Canvas>
+      </CanvasWrapper>
+    </>
+  );
+}
+
 export default IndexPage;
