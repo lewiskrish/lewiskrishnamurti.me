@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { GlobalStyle } from "../components/layout";
+import Venus from "../components/venus";
 import Moon from "../components/moon";
 import Text from "../components/text";
 
@@ -32,7 +33,8 @@ const IndexPage = () => {
         <Canvas>
           <Suspense fallback={null}>
             <Text />
-            <Moon />
+            <Moon location={[2,0,2]}/>
+            <Venus />
           </Suspense>
         </Canvas>
       </CanvasWrapper>
