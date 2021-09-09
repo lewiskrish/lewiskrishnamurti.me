@@ -1,6 +1,8 @@
 import * as React from "react";
+import Loader from "react-loader-spinner";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
+import { Html } from "@react-three/drei";
 import { Suspense } from "react";
 import { GlobalStyle } from "../components/layout";
 import Venus from "../components/venus";
@@ -31,9 +33,11 @@ const IndexPage = () => {
       <GlobalStyle />
       <CanvasWrapper>
         <Canvas>
-          <Suspense fallback={null}>
+          <Suspense fallback={<Html><Loader
+            type="Grid" timeout={5000}/>
+          </Html>}>
             <Text />
-            <Moon location={[2,0,2]}/>
+            <Moon location={[2, 0, 2]} />
             <Venus />
           </Suspense>
         </Canvas>
