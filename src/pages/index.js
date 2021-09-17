@@ -34,7 +34,7 @@ const IndexPage = () => {
       <CanvasWrapper>
         <Canvas>
           <Suspense fallback={<Html><Loader
-            type="Grid" timeout={5000}/>
+            type="ThreeDots" timeout={15000}/>
           </Html>}>
             <Text />
             <Moon location={[2, 0, 2]} />

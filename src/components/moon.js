@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
-import { useFrame, useLoader, useThree } from "@react-three/fiber";
-import { Stars } from "@react-three/drei";
+import { useFrame, useLoader } from "@react-three/fiber";
 
 import MoonMap from "../assets/textures/8k_moon.jpg";
 import { TextureLoader } from "three";
