@@ -1,11 +1,10 @@
 import React, { useRef, useState } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 
-import MoonMap from "../assets/textures/8k_moon.jpg";
 import { TextureLoader } from "three";
 
-const Moon = ({ location }) => {
-  const moonMap = useLoader(TextureLoader, MoonMap);
+const Moon = ({ location, texture, link }) => {
+  const moonMap = useLoader(TextureLoader, texture);
 
   const moonRef = useRef();
 
@@ -22,7 +21,7 @@ const Moon = ({ location }) => {
         position={location} 
         onPointerOver={(e) => setHover(true)}
         onPointerOut={(e) => setHover(false)}
-        onClick={(e) => window.open("https://github.com/lewiskrish")}>
+        onClick={(e) => window.open(link)}>
         <sphereGeometry args={[0.4, 32, 32]} />
         <meshStandardMaterial
           map={moonMap}

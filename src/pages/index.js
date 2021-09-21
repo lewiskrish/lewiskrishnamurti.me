@@ -8,6 +8,8 @@ import { GlobalStyle } from "../components/layout";
 import Venus from "../components/venus";
 import Moon from "../components/moon";
 import Text from "../components/text";
+import MoonMap from "../assets/textures/8k_moon.jpg";
+import MercuryMap from "../assets/textures/8k_mercury.jpg";
 
 const CanvasWrapper = styled.div`
   width: 100vw;
@@ -37,7 +39,8 @@ const IndexPage = () => {
             type="ThreeDots" timeout={15000}/>
           </Html>}>
             <Text />
-            <Moon location={[2, 0, 2]} />
+            <Moon location={[2, 0.5, 2]} texture={MoonMap} link={"https://github.com/lewiskrish"} />
+            <Moon location={[2, -0.75, 2]} texture={MercuryMap} link={"/static/lewis_krishnamurti_cv.pdf"}/>
             <Venus />
           </Suspense>
         </Canvas>
