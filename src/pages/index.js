@@ -40,7 +40,7 @@ const IndexPage = () => {
           </Html>}>
             <Text />
             <Moon location={[2, 0.5, 2]} texture={MoonMap} link={"https://github.com/lewiskrish"} />
-            <Moon location={[2, -0.75, 2]} texture={MercuryMap} link={"/static/lewis_krishnamurti_cv.pdf"}/>
+            <Moon location={[2, -0.75, 2]} texture={MercuryMap} link={"https://drive.google.com/file/d/1KJQvCIVHggxOGC54sbkCCYmHqhplRHhR/view"}/>
             <Venus />
           </Suspense>
         </Canvas>
